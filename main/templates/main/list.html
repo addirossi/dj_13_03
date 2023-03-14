@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список книг</title>
+</head>
+<body>
+    {% for book in books %}
+        <h2>{{ book.title }}</h2>
+        <h3>{{ book.publisher }}</h3>
+        <h3>{{ book.year }}</h3>
+        <a href="{% url 'book-details' book.slug %}">Подробнее</a>
+        <br>
+    {% endfor %}
+</body>
+</html>
