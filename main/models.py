@@ -37,8 +37,13 @@ class Order(models.Model):
 class OrderItems(models.Model):
     order = models.ForeignKey(Order, on_delete=models.RESTRICT, related_name='items')
     book = models.ForeignKey(Book, on_delete=models.RESTRICT)
-    quantity = models.PositiveSmallIntegerField(default=1)
+    quantity = models.PositiveSmallIntegerField(default=1, verbose_name='Количество')
 
+    class Meta:
+        verbose_name = 'Позиция заказа'
+        verbose_name_plural = 'Позиции заказа'
 
 # order = Order.objects.get(id=1)
 # order.items.first()
+
+#
